@@ -23,7 +23,7 @@ jobs:
         run: npm install --save-dev eslint @eslint/js
 
       - name: Lint JavaScript
-        run: npx eslint scripts/content.js popup/popup.js --no-eslintrc -c eslint.config.mjs
+        run: npx eslint scripts/content.js popup/popup.js
 
       - name: Validate manifest.json
         run: |
@@ -46,7 +46,7 @@ jobs:
       - name: Check for console.log statements
         run: |
           if grep -rn "console\.log" scripts/ popup/; then
-            echo "⚠️  Found console.log statements — consider using console.info/warn/error or removing before release"
+            echo " ERROR Found console.log statements — consider using console.info/warn/error or removing before release"
           else
             echo "No console.log statements found ✓"
           fi
