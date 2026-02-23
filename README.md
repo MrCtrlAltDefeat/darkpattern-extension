@@ -1,4 +1,4 @@
-# 🕵️ darkpattern-extension
+# darkpattern-extension
 
 <p align="center">
   <strong>A Chrome extension that detects dark patterns on websites in real time.</strong><br/>
@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <img alt="CI" src="https://github.com/YOUR_USERNAME/darkpattern-extension/actions/workflows/ci.yml/badge.svg" />
+  <img alt="CI" src="https://github.com/MrCtrlAltDefeat/darkpattern-extension/actions/workflows/ci.yml/badge.svg" />
   <img alt="Manifest V3" src="https://img.shields.io/badge/manifest-v3-blue" />
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green" />
   <img alt="Zero dependencies" src="https://img.shields.io/badge/dependencies-none-brightgreen" />
@@ -18,7 +18,7 @@
 
 ---
 
-## 🔍 Detected Dark Patterns
+## Detected Dark Patterns
 
 | Category | What it catches | Highlight color |
 |---|---|---|
@@ -31,7 +31,7 @@
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### From source (developer mode)
 
@@ -48,7 +48,7 @@ Open `demo-site.html` in your browser after loading the extension — it contain
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 darkpattern-extension/
@@ -65,7 +65,7 @@ darkpattern-extension/
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. `content.js` is injected into every page by the browser (via `manifest.json`)
 2. On load and on DOM mutations, it runs 6 detector functions over the page
@@ -77,10 +77,10 @@ Detectors use keyword matching, DOM structure analysis, and computed styles — 
 
 ---
 
-## 🧪 Development
+## Development
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/darkpattern-extension.git
+git clone https://github.com/MrCtrlAltDefeat/darkpattern-extension.git
 cd darkpattern-extension
 npm install      # installs ESLint for linting only — no runtime deps
 npm run lint
@@ -92,7 +92,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add new detectors.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome — new pattern categories, better keyword lists, false-positive fixes, UI improvements. See [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
