@@ -1,0 +1,41 @@
+name: ✨ Feature Request
+description: Suggest a new dark pattern category or extension improvement
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of request
+      options:
+        - New dark pattern category
+        - Improve existing detector
+        - UI / popup improvement
+        - Performance
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      placeholder: "Detect 'roach motel' patterns where it's easy to sign up but hard to cancel..."
+    validations:
+      required: true
+
+  - type: input
+    id: example
+    attributes:
+      label: Example site (optional)
+      placeholder: "https://example.com — shows this pattern on the checkout page"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - Low — nice to have
+        - Medium — common pattern worth detecting
+        - High — widespread and harmful
+    validations:
+      required: true

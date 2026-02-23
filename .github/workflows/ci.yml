@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate:
+    name: Validate Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install --save-dev eslint @eslint/js
+
+      - name: Lint JavaScript
+        run: npx eslint scripts/content.js popup/popup.js --no-eslintrc -c eslint.config.mjs
+
+      - name: Validate manifest.json
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+            const required = ['name', 'version', 'manifest_version', 'description'];
+            const missing = required.filter(k => !manifest[k]);
+            if (missing.length) {
+              console.error('Missing required manifest fields:', missing.join(', '));
+              process.exit(1);
+            }
+            if (manifest.manifest_version !== 3) {
+              console.error('manifest_version must be 3');
+              process.exit(1);
+            }
+            console.log('manifest.json is valid ✓');
+          "
+
+      - name: Check for console.log statements
+        run: |
+          if grep -rn "console\.log" scripts/ popup/; then
+            echo "⚠️  Found console.log statements — consider using console.info/warn/error or removing before release"
+          else
+            echo "No console.log statements found ✓"
+          fi

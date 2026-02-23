@@ -1,0 +1,33 @@
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Node (if tooling is added later) ─────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnp/
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist/
+build/
+*.crx
+*.pem
+*.zip
+
+# ── Environment / Secrets ─────────────────────────────────────────────────────
+.env
+.env.*

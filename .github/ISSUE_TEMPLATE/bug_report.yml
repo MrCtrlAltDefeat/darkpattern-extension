@@ -1,0 +1,50 @@
+name: 🐛 Bug Report
+description: A dark pattern isn't detected, or the extension misbehaves
+labels: ["bug", "triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Detection (false negative — missed a pattern)
+        - False positive (flagged something that isn't a pattern)
+        - Popup UI
+        - Floating panel on page
+        - Performance / page slowdown
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: site
+    attributes:
+      label: Affected website (if applicable)
+      placeholder: "https://example.com"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      placeholder: "The extension flagged a regular newsletter checkbox as a trick question..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Load the extension
+        2. Visit https://...
+        3. See finding (or lack of finding)
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser & version
+      placeholder: "Chrome 124, Edge 123..."
+    validations:
+      required: true
